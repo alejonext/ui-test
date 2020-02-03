@@ -36,7 +36,10 @@
                 "src/styles"
               ]
             },
-            "scripts": []
+            "scripts": [
+              "node_modules/dayjs/dayjs.min.js",
+              "node_modules/dayjs/plugin/relativeTime.js"
+            ]
           },
           "configurations": {
             "production": {

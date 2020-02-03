@@ -1,4 +1,5 @@
-<article class="container">
+<article class="container"
+  *ngIf="person">
   <div class="question">
     What's your opinion on
     <h2>{{ person?.name }}?</h2>
@@ -27,8 +28,9 @@
     </div>
   </div>
 
-  <div class="closing">
-    <span>CLOSING IN</span>
-    <span>{{ person?.expiry }}</span>
+  <div class="closing"
+    *ngIf="person?.expiry">
+    <span>CLOSING</span>
+    <span>{{ person?.expiry | relative:'fromNow' }}</span>
   </div>
 </article>

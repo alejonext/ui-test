@@ -1,14 +1,14 @@
-<article>
+<article *ngIf="person && person.id">
   <h3>
     {{ person?.name }}
     <app-vote
-      [value]="person.pro - person.con"
+      [value]="person?.pro - person?.con"
       [me]="votes$ | get:'user' | async">
     </app-vote>
   </h3>
 
   <span class="hidden-small">
-    <strong>{{ person?.date }}</strong> in {{ person?.category }}
+    <strong>{{ person?.expiry | relative:'fromNow' }}</strong> in {{ person?.category }}
   </span>
 
   <p class="hidden-small">{{ person?.description }}</p>
@@ -41,8 +41,10 @@
   </div>
 </article>
 
-<app-result
-  [pro]="person.pro"
-  [contra]="person.con"
-  [me]="votes$ | get:'user' | async" >
-</app-result>
+<div *ngIf="person">
+  <app-result
+    [pro]="person?.pro || 0"
+    [contra]="person?.con || 0"
+    [me]="votes$ | get:'user' | async" >
+  </app-result>
+</div>

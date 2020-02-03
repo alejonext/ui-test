@@ -3,6 +3,8 @@ export interface Person {
   name: string;
   description: string;
   category: string;
-  end: string;
-  start?: string;
+  expiry: string;
+  create: string;
+  pro:number;
+  con:number;
 }

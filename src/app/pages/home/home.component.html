@@ -7,8 +7,10 @@
   *ngIf="route.data | get:'persons' | async as persons">
   <h2>Votes</h2>
 
-  <app-person-summary
-    *ngFor="let item of persons"
-    [person]="item" >
-  </app-person-summary>
+  <ng-template ngFor let-item let-i="index" [ngForOf]="persons">
+    <app-person-summary
+      *ngIf="i != 0"
+      [person]="item" >
+    </app-person-summary>
+  </ng-template>
 </section>

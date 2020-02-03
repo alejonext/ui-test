@@ -28,8 +28,6 @@ export class UserService implements CanActivate {
     this.storage.set(UserService.KEY, this.doc.defaultView.btoa(`${user}:${pass}`));
     this.login$.emit(this.isLogin);
 
-    console.log('isLogin', this.isLogin);
-
     return Promise.resolve(true);
   }
 

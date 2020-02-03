@@ -17,9 +17,7 @@ export class PersonService {
   constructor(
     private storage: StorageService,
     private http: HttpClient
-  ) {
-    console.log('persons', this);
-  }
+  ) {}
 
   public view(): Observable<Person[]> {
     return this.http.get<Person[]>('/assets/api/person.json')

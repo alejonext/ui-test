@@ -18,6 +18,8 @@ import {
   ThrottleModule
 } from 'ngx-async-pipeline';
 import { ErrorsPipe } from './errors.pipe';
+import { DatesPipe } from './dates.pipe';
+import { RelativeTimePipe } from './relative-time.pipe';
 
 const EXPORT = [
   DebounceTimeModule,
@@ -40,7 +42,9 @@ const EXPORT = [
 
 @NgModule({
   imports: EXPORT,
-  exports :  [ ...EXPORT, ErrorsPipe],
-  declarations: [ErrorsPipe]
+  exports :  [ ...EXPORT, ErrorsPipe, DatesPipe, RelativeTimePipe],
+  declarations: [ ErrorsPipe, DatesPipe, RelativeTimePipe ]
 })
-export class PipeModule { }
+export class PipeModule {
+
+}
