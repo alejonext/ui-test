@@ -1,0 +1,117 @@
+<form class="container"
+  [formGroup]="signForm"
+  (ngSubmit)="onSubmit()" >
+
+  <h2>Sign Up</h2>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+  <div class="center">
+    <fieldset>
+      <label for="username">Username</label>
+      <input formControlName="username" id="username" type="text" name="username">
+      <p [ngSwitch]="signForm.controls.username.errors | errors">
+        <span *ngSwitchCase="'required'">Required field</span>
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="password">Password</label>
+      <input formControlName="password" id="password" type="password" name="password">
+      <p [ngSwitch]="signForm.controls.password.errors | errors">
+        <span *ngSwitchCase="'required'">Required field</span>
+        <span *ngSwitchCase="'minlength'">4 characters minimun</span>
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="confirm">Password Confirmation</label>
+      <input formControlName="confirm" id="confirm" type="password" name="confirm">
+      <p [ngSwitch]="signForm.controls.confirm.errors | errors">
+        <span *ngSwitchCase="'required'">Required field</span>
+        <span *ngSwitchCase="'minlength'">4 characters minimun</span>
+        <span *ngSwitchCase="'match'">Password doesn't match</span>
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="email">Email</label>
+      <input formControlName="email" id="email" type="email" name="email">
+      <p [ngSwitch]="signForm.controls.email.errors | errors">
+        <span *ngSwitchCase="'required'">Required field</span>
+        <span *ngSwitchCase="'email'">Not a valid email address</span>
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="gender">Gender</label>
+      <select formControlName="gender" id="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <p [ngSwitch]="signForm.controls.gender.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="age">Age range</label>
+      <select formControlName="age" id="age">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <p [ngSwitch]="signForm.controls.age.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="zip">Zip Code</label>
+      <input formControlName="zip" id="zip" type="tel" name="zip">
+      <p [ngSwitch]="signForm.controls.zip.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+  </div>
+
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+  <div class="center">
+    <fieldset>
+      <label for="education">Eduaction Level</label>
+      <select formControlName="education" id="education">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <p [ngSwitch]="signForm.controls.education.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="icome">Income range</label>
+      <select formControlName="icome" id="icome">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <p [ngSwitch]="signForm.controls.icome.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+    <fieldset>
+      <label for="religion">Religion</label>
+      <select formControlName="religion" id="religion">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <p [ngSwitch]="signForm.controls.religion.errors | errors">
+        <span *ngSwitchDefault></span>
+      </p>
+    </fieldset>
+  </div>
+
+  <fieldset class="button">
+    <button type="submit">Sign Up</button>
+  </fieldset>
+</form>

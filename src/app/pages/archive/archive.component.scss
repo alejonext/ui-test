@@ -1,0 +1,16 @@
+
+h2 {
+  width: 100%;
+}
+
+.container {
+  margin-top:10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+app-person-summary {
+  width: calc(33.3% - 2rem);
+}
+

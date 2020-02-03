@@ -1,0 +1,30 @@
+<header>
+  <div class="container">
+    <div class="color">
+      <h1>How It Works</h1>
+      <div class="bigger">
+        Speak out. Be heard<br>
+        <strong>Be counted</strong>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius euismod tellus et porta. Vivamus nec metus rutrum ipsum interdum fermentum a in ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam consequat tincidunt varius. Etiam dignissim mattis condimentum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius euismod tellus et porta. Vivamus nec metus rutrum ipsum interdum fermentum a in ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam consequat tincidunt varius. Etiam dignissim mattis condimentum.</p>
+    </div>
+  </div>
+</header>
+
+<div class="actions container">
+  <section *ngFor="let item of cards">
+    <img [src]="item.image">
+    <h3>{{item.title}}</h3>
+    <p>{{item.text}}</p>
+  </section>
+</div>
+
+<div class="you-want container">
+  <h2>What do you want to do now?</h2>
+
+  <section>
+    <button>Sign Up now</button>
+    <button>See Past Trails</button>
+  </section>
+</div>

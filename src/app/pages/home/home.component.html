@@ -1,0 +1,14 @@
+<app-person-hero
+  *ngIf="route.data | get:'persons' | get:'0' | async as person"
+  [person]="person">
+</app-person-hero>
+
+<section class="container"
+  *ngIf="route.data | get:'persons' | async as persons">
+  <h2>Votes</h2>
+
+  <app-person-summary
+    *ngFor="let item of persons"
+    [person]="item" >
+  </app-person-summary>
+</section>

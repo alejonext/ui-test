@@ -1,0 +1,64 @@
+form {
+  display: flex;
+  flex-direction: column;
+  color: #ebebeb;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+
+  > * {
+    margin: .5rem 0;
+  }
+
+  input {
+    border: none;
+    background-color: #ebebeb;
+    color: black;
+    height: 2.5rem;
+    padding: .25rem .5rem;
+
+    &::placehoder {
+      font-style: italic;
+      color : white;
+    }
+  }
+
+  a {
+    color : #ebebeb;
+  }
+
+  button {
+    background-color: black;
+    color: #ebebeb;
+    border: 2px solid #ebebeb;
+    height: 3.5rem;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    > * {
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  .white {
+    background-color: #ebebeb;
+    color : black;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    a {
+      color : black;
+    }
+  }
+}

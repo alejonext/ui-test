@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1048px;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+h1{
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 200;
+  //margin: 0 0 $content-padding;
+}
+
+h3 {
+  font-size: 38px;
+  font-weight: normal;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+:placeholder {
+   font-style: italic;
+}
+
+app-rules > {
+  @import './app/app';
+}
+
+@import './app/organism/person-hero/person-hero';
+
+

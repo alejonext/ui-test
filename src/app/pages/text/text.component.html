@@ -1,0 +1,5 @@
+<article class="container"
+  *ngIf="route.data | get:'post' | async as post">
+  <h1>{{post.title}}</h1>
+  <section [innerHTML]="post.body" ></section>
+</article>

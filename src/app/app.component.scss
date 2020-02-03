@@ -1,0 +1,20 @@
+@import 'variables';
+
+:host {
+
+  > header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  }
+
+  > main {
+    margin-top: -27px;
+    min-height: calc(100vh - #{$footer + 1});
+
+    > router-outlet {
+      display: none;
+    }
+  }
+}
+
+
+

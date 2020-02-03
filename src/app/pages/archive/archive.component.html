@@ -1,0 +1,12 @@
+<section
+  class="container"
+  *ngIf="route.data | get:'persons' | async as persons">
+  <h2>Past Trials</h2>
+
+  <app-person-summary
+    class="small"
+    *ngFor="let item of persons"
+    [person]="item" >
+  </app-person-summary>
+</section>
+

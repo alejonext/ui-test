@@ -1,0 +1,133 @@
+@import 'variables';
+
+app-person-hero {
+  display: block;
+  position: relative;
+  height: 740px;
+
+  margin: 0 auto $main-padding;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .question {
+    position: absolute;
+    top: 140px;
+    left: $grid-left;
+    width: 420px;
+    z-index: 1;
+
+    // background
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: rgba(100, 100, 100, 0.75);
+      content: "";
+      z-index: -1;
+    }
+
+    @media #{$lt-md} {
+      position: relative;
+      left: 0;
+
+      margin: 0 auto;
+      max-width: 420px;
+      width: auto;
+    }
+
+    color: white;
+    padding: 35px 35px 0;
+
+    h2 {
+      font-size: 50px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: 200;
+    }
+
+    > .fab {
+      font-size: 80%;
+      margin-right: 0.4em;
+    }
+
+    a {
+      color: white;
+      font-size: 90%;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 40px 0;
+    }
+
+    > .row {
+      margin: 0 -35px;
+      display: flex;
+
+      button {
+        flex: 1;
+        border: none;
+        color: white;
+        font-size: 40px;
+        height: 80px;
+
+        app-vote {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:first-child {
+          background: rgba(28, 187, 180, 0.5);
+        }
+
+        &:last-child {
+          background: rgba(255, 173, 29, 0.5);
+        }
+      }
+    }
+  }
+
+  .closing {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    span {
+      line-height: 50px;
+      flex: 1;
+
+      &:first-child {
+        background: rgba(0, 0, 0, 0.35);
+        color: white;
+        font-size: 90%;
+        padding-right: 10px;
+        text-align: right;
+      }
+
+      &:last-child {
+        flex: 33.3%;
+        background: rgba(255, 255, 255, 0.75);
+        color: #464646;
+        font-size: 36px;
+        font-weight: 200;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+

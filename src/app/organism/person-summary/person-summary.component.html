@@ -1,0 +1,48 @@
+<article>
+  <h3>
+    {{ person?.name }}
+    <app-vote
+      [value]="person.pro - person.con"
+      [me]="votes$ | get:'user' | async">
+    </app-vote>
+  </h3>
+
+  <span class="hidden-small">
+    <strong>{{ person?.date }}</strong> in {{ person?.category }}
+  </span>
+
+  <p class="hidden-small">{{ person?.description }}</p>
+
+  <div class="votes hidden-small">
+    <app-vote value="1"
+      *ngIf="votes$ | get:'user' | not | async"
+      [active]="1 == select"
+      (vote)="select = $event" >
+    </app-vote>
+
+    <app-vote value="-1"
+      *ngIf="votes$ | get:'user' | not | async"
+      [active]="-1 == select"
+      (vote)="select = $event" >
+    </app-vote>
+
+    <button type="button"
+      *ngIf="votes$ | get:'user' | not | async"
+      [disabled]="select == null "
+      (click)="doVote(true)">
+      Vote now
+    </button>
+
+    <button type="button"
+      *ngIf="( votes$ | get:'user' | async ) && select === null "
+      (click)="doVote(false)">
+      Vote again
+    </button>
+  </div>
+</article>
+
+<app-result
+  [pro]="person.pro"
+  [contra]="person.con"
+  [me]="votes$ | get:'user' | async" >
+</app-result>

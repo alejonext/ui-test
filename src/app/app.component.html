@@ -1,0 +1,40 @@
+<header>
+  <div class="container">
+    <h1><a routerLink="/">Rule of Thumb.</a></h1>
+
+    <nav>
+      <a routerLink="/past-trials">Past Trials</a>
+      <a routerLink="/how-it-works">How It Works</a>
+      <a
+        [routerLink]="['/', { outlets: { modal: 'modal/login' } }]"
+        *ngIf="!user.isLogin" >
+        Log In / Sign Up
+      </a>
+      <a href="#"
+        *ngIf="user.isLogin"
+        (click)="user.logout()">
+        Log Out
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="container">
+  <nav>
+    <a routerLink="/terms" >Terms and Conditions</a>
+    <a routerLink="/terms">Privacy Policy</a>
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <nav>
+    <span>Follow Us</span>
+    <a href="#"><i class="fab fa-2x fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-2x fa-twitter"></i></a>
+  </nav>
+</footer>
+
+<router-outlet name="modal"></router-outlet>
