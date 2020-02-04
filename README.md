@@ -1,3 +1,20 @@
+# Install
+
+```
+$ npm install
+```
+
+# Start
+
+```
+$ npm start
+```
+
+Go to http://localhost:42000/
+
+
+----
+
 # UI candidates test v2.0
 
 Note: If time is a constraint, try to resolve what you consider is the most valuable part of the excercise. It is better to focus efforts and show your work quality in a portion of the excercise that solving everything with poor quality. In such case, please describe how you would handle the parts of the excercise that you cannot deliver by relying on a Readme.md file.
